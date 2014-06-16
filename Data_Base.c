@@ -89,3 +89,26 @@ STATUS GetHead(const LINKQUEUE *pQ, Elem *e)
 
 	return FAILE;
 }
+
+STATUS InsrtQueue(LINKQUEUE *pQ, const Elem v)
+{
+	NODE *pNew = (NODE *)malloc(sizeof(NODE));
+	if (!pNew)
+	{
+		printf("动态分配内存错误!\n");
+		return FAILE;
+	}
+	/*
+	**填充数据
+	*/
+	pNew->data = v;
+	pNew->pNext = NULL;
+
+	/*
+	**连接
+	*/
+	pQ->rear->pNext = pNew;
+	pQ->rear = pNew;
+
+	return OK;
+}
