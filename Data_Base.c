@@ -128,3 +128,15 @@ STATUS DeleteQueue(LINKQUEUE *pQ, Elem *e)
 
 	return FAILE;
 }
+
+void TraveQueue(const LINKQUEUE *pQ)
+{
+	NODE *p = pQ->front;
+	while (p && p->pNext)
+	{
+		printf("%d ", p->pNext->data);
+		p = p->pNext;
+	}
+
+	return;
+}
