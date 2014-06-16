@@ -78,3 +78,14 @@ size_t QueueLength(const LINKQUEUE *pQ)
 
 	return len;
 }
+
+STATUS GetHead(const LINKQUEUE *pQ, Elem *e)
+{
+	if (pQ->front && pQ->front->pNext)/*若链式队列存在并且不为空*/
+	{
+		*e = pQ->front->pNext->data;
+		return OK;
+	}
+
+	return FAILE;
+}
