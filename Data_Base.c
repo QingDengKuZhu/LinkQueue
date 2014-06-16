@@ -112,3 +112,19 @@ STATUS InsrtQueue(LINKQUEUE *pQ, const Elem v)
 
 	return OK;
 }
+
+STATUS DeleteQueue(LINKQUEUE *pQ, Elem *e)
+{
+	NODE *p = NULL;
+	if (pQ->front && pQ->front->pNext)/*如果队列存在且不为空*/
+	{
+		p = pQ->front->pNext;	/*指向队头*/
+		*e = p->data;
+		pQ->front->pNext = p->pNext;
+		free(p);
+
+		return OK;
+	}
+
+	return FAILE;
+}
