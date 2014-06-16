@@ -65,3 +65,16 @@ BOOL QueueEmpty(const LINKQUEUE *pQ)
 		return FALSE;
 	}
 }
+
+size_t QueueLength(const LINKQUEUE *pQ)
+{
+	size_t len = 0;
+	NODE *p = pQ->front;
+	while (p && p->pNext)
+	{
+		++len;
+		p = p->pNext;
+	}
+
+	return len;
+}
