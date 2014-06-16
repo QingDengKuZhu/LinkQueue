@@ -53,3 +53,15 @@ void ClearQueue(LINKQUEUE *pQ)
 
 	return;
 }
+
+BOOL QueueEmpty(const LINKQUEUE *pQ)
+{
+	if (pQ->front == pQ->rear)
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
