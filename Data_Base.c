@@ -90,7 +90,7 @@ STATUS GetHead(const LINKQUEUE *pQ, Elem *e)
 	return FAILE;
 }
 
-STATUS InsrtQueue(LINKQUEUE *pQ, const Elem v)
+STATUS InsertQueue(LINKQUEUE *pQ, const Elem v)
 {
 	NODE *pNew = (NODE *)malloc(sizeof(NODE));
 	if (!pNew)

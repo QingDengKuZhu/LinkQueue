@@ -8,7 +8,7 @@
 #include "Data.h"
 
 /*
-pL为指向单链表的指针,且pL不为NULL.
+pQ为指向链式队列的指针,且pQ不为NULL.
 */
 
 /*构造一个空的链式队列.*/
@@ -30,7 +30,7 @@ size_t QueueLength(const LINKQUEUE *pQ);
 STATUS GetHead(const LINKQUEUE *pQ, Elem *e);
 
 /*在队尾插入元素v.若成功插入,函数返回OK;否者,函数返回FAILE.*/
-STATUS InsrtQueue(LINKQUEUE *pQ, const Elem v);
+STATUS InsertQueue(LINKQUEUE *pQ, const Elem v);
 
 /*在队头删除元素,若成功删除,函数返回ok, *e保存删除值;否者函数返回FAIlE,*e无定义*/
 STATUS DeleteQueue(LINKQUEUE *pQ, Elem *e);
