@@ -46,7 +46,7 @@ void ClearQueue(LINKQUEUE *pQ)
 	{
 		p = q->pNext;
 		free(q);
-		p = q;
+		q = p;
 	}
 	pQ->front->pNext = NULL;
 	pQ->rear = pQ->front;
