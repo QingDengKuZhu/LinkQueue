@@ -119,6 +119,10 @@ STATUS DeleteQueue(LINKQUEUE *pQ, Elem *e)
 	if (pQ->front && pQ->front->pNext)/*如果队列存在且不为空*/
 	{
 		p = pQ->front->pNext;	/*指向队头*/
+		if (p == pQ->rear)/*当队列中只有一个有效元素时,出队会改变尾指针rear.*/
+		{
+			pQ->rear = pQ->front;
+		}
 		*e = p->data;
 		pQ->front->pNext = p->pNext;
 		free(p);
